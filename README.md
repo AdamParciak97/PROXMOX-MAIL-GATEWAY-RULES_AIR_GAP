@@ -4,6 +4,7 @@
 
 ### Purpose: maximally make it difficult to enter malicious attachments/files and suspicious content without sandboxing and without a URL/DNSBL reputation.
 ### Environment: No internet; you have your own DNS (internal) and mail circulates in your domain/in-borted partners.
+
 ### The strategy :
 ### Hard rules for file types and extensions (block/quarium).
 ### More aggressive anti-spam thresholds (only local heuristics).
