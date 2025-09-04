@@ -2,7 +2,7 @@
 
 ## Assumptions and purpose
 
-#### Purpose: maximally make it difficult to enter malicious attachments/files and suspicious content without sandboxing and without a URL/DNSBL reputation.
+#### Purpose: maximally make it difficult to enter malicious attachments/files and suspicious content without sandboxing.
 #### Environment: No internet; you have your own DNS (internal) and mail circulates in your domain/in-borted partners.
 
 
