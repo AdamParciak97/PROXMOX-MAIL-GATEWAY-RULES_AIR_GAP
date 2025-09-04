@@ -1,0 +1,19 @@
+# +2 points if the message contains >=2 http/https links
+uri LOCAL_MANY_HTTP /https?:\/\/[^\s<>()]{10,}/
+score LOCAL_MANY_HTTP 2.0
+describe LOCAL_MANY_HTTP Message contains one or more HTTP links
+
+# +3 points for files with macros (if SA catches it in the MIME headers)
+header LOCAL_OFFICE_MACRO Content-Type =~ /macroEnabled/i
+score LOCAL_OFFICE_MACRO 3.0
+describe LOCAL_OFFICE_MACRO Office document with macros
+
+# +3 points for the typical "double extension" in attachment names
+mimeheader LOCAL_DOUBLE_EXT Content-Disposition =~ /\.(?:[a-z0-9]{1,6})\.(exe|js|vbs|scr|bat|cmd|com)(?="|;)/i
+score LOCAL_DOUBLE_EXT 3.0
+describe LOCAL_DOUBLE_EXT Attachment has double extension
+
+# +2.5 points if the message has an archive attachment (zip/rar/7z)
+mimeheader LOCAL_ARCHIVE Content-Type =~ /application\/(zip|x-7z-compressed|x-rar)/i
+score LOCAL_ARCHIVE 2.5
+describe LOCAL_ARCHIVE Archive attachment present
